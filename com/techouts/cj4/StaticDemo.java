@@ -5,8 +5,8 @@ public class StaticDemo {
             System.out.println("Nested static class");
         }
     }
-    static void method1(){
-        System.out.println("Inside Static method");
+    protected static void method1(){
+        System.out.println("Inside protectd Static method");
     }
     static String companyName;
     public static void main(String[] args){
