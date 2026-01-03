@@ -1,0 +1,13 @@
+Git Branching commands:
+    Creating Branch : git branch branch_name
+    Switching to Branch : git checkout branch_name
+    Creating and Switching to Branch : git checkout -b branch_name
+    Merging Branch to existing one : git merge branch_name
+    Deleting Branch : git checkout -d branch_name
+
+GitFlow Workflow: It enables parallel development, developers work on individual feature branches.
+    These feature branches are created from master . After completing all branches are merged with master branch.
+Develop:Integration branch where new features are merged before release.
+Feature Branches : Created for single feature or task (ex: feature/login-page)
+Release Branches : Created from the develop branch to prepare for production releases and bug fixes.(ex release/1.0.0)
+Hotfix Branches: Created from the master branch to address urgent issues directly in production(hotfix/urgent-bug)

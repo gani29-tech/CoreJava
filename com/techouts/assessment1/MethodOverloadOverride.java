@@ -41,7 +41,7 @@ class Tech extends Techouts{
     }
 }
 
-public class CompanyDemo {
+public class MethodOverloadOverride {
     public static void main(String[] args) {
         Techouts tech = new Tech();
         tech.setCompany("TECH-OUTS");

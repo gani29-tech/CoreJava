@@ -8,7 +8,6 @@ public class GradeSystemUsingSwitchCase {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter Marks: ");
         marks = input.nextInt();
-        int number;
         if (marks % 10==0)
             marks ++;
         switch (marks/10){

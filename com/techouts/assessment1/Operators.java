@@ -23,7 +23,6 @@ public class Operators {
         System.out.println("firstNumber < secondNumber : "+(firstNumber < secondNumber));
 
         // Logical Operators
-
         boolean firstBoolean = true;
         boolean secondBoolean = false;
         System.out.println("Logical AND : " +(firstBoolean && secondBoolean));

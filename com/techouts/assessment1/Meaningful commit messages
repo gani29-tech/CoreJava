@@ -1,0 +1,10 @@
+Short summary -> "Adding Assessment files"
+Part of project (scope)-> login ,checkout, profile-page
+Types
+1.feat ->  new feature
+2.fix → bug fix
+3.docs → documentation
+4.refactor → code refactoring
+5.test → adding/updating tests
+
+ex : git commit -m "feat(profile-page): Adding asssessment files"

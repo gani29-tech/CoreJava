@@ -1,6 +1,6 @@
 package com.techouts.assessment1;
 
-public class PrintingHelloJVM {
+public class HelloJVM {
     public static void main(String[] args) {
         System.out.println("Hello JVM");
         // 1. Compilation : convert Source code(.java) into Bytecode(.class),Bytecode is Machine Independent.

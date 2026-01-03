@@ -1,0 +1,6 @@
+How sonarLint improve code quality:
+1.Identifies common programming mistakes before running the code.
+2.Find Code Smells : Code smells are patterns that are technically correct but risky or messy.
+    Ex : long methods,Duplicate code
+3.Enforces Coding standards (ClassName,methodName(),variableName and etc).
+4.Issues are highlighted immediately while typing.

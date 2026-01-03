@@ -10,7 +10,11 @@ public class StaticDemo {
         number = 9;
         System.out.println(number);
     }
+
     // Static Variable : It is sharable inside the class
     // Static Method : We can access without creating object
     // Both are belongs to the class
+    static {
+        System.out.println("Inside static block");
+    }           // First Preference is static block and next main
 }
