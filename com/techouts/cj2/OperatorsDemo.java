@@ -1,66 +1,78 @@
 package com.techouts.cj2;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class OperatorsDemo {
+    private static final Logger logger = Logger.getLogger(OperatorsDemo.class.getName());
+
     public static void main(String[] args) {
         int a = 10;
         int b = 5;
 
         // 1. Arithmetic Operators
-        System.out.println("Arithmetic Operators:");
-        System.out.println("a + b = " + (a + b));
-        System.out.println("a - b = " + (a - b));
-        System.out.println("a * b = " + (a * b));
-        System.out.println("a / b = " + (a / b));
-        System.out.println("a % b = " + (0));
+        logger.info("Arithmetic Operators: ");
+        logger.log(Level.INFO, "a +b = {0} ", a + b);
+        logger.log(Level.INFO, "a *b = {0} ", a * b);
+        logger.log(Level.INFO, "a - b = {0} ", a - b);
+        logger.log(Level.INFO, "a / b = {0} ", a / b);
+        logger.log(Level.INFO, "a % b = {0} ", a % b);
 
         // 2. Relational Operators
-        System.out.println("\nRelational Operators:");
-        System.out.println("a > b: " + (a > b));
-        System.out.println("a < b: " + (a < b));
-        System.out.println("a >= b: " + (a >= b));
-        System.out.println("a <= b: " + (a <= b));
-        System.out.println("a == b: " + (a == b));
-        System.out.println("a != b: " + (a != b));
+        logger.info("Relational Operators: ");
+        logger.log(Level.INFO, "a >= b = {0} ", a >= b);
+        logger.log(Level.INFO, "a <= b = {0} ", a <= b);
+        logger.log(Level.INFO, "a<b = {0} ", a < b);
+        logger.log(Level.INFO, "a==b = {0} ", a == b);
+        logger.log(Level.INFO, "a!=b = {0} ", a != b);
+        logger.log(Level.INFO, "a>b = {0} ", a > b);
 
         // 3. Logical Operators
-        System.out.println("\nLogical Operators:");
-        boolean x = true, y = false;
-        System.out.println("x && y: " + (x && y));
-        System.out.println("x || y: " + (x || y));
-        System.out.println("!x: " + (!x));
+        logger.info("Logical Operators:");
+        boolean x = true;
+        boolean y = false;
+        logger.log(Level.INFO, "x &&y = {0} ", x && y);
+        logger.log(Level.INFO, "x &||y = {0} ", x || y);
+        logger.log(Level.INFO, "!x : {0} ", !x);
 
         // 4. Bitwise Operators
-        System.out.println("\nBitwise Operators:");
-        System.out.println("a & b: " + (a & b));
-        System.out.println("a | b: " + (a | b));
-        System.out.println("a ^ b: " + (a ^ b));
-        System.out.println("~a: " + (~a));
-        System.out.println("a << 1: " + (a << 1));
-        System.out.println("a >> 1: " + (a >> 1));
-        System.out.println("a >>> 1: " + (a >>> 1));
+        logger.info("Bitwise Operators:");
+        logger.log(Level.INFO, "a & b = {0} ", a & b);
+        logger.log(Level.INFO, "a | b = {0} ", a | b);
+        logger.log(Level.INFO, "a ^ b = {0} ", a ^ b);
+        logger.log(Level.INFO, "a ^ ~ b = {0} ", a ^ ~b);
+        logger.log(Level.INFO, "a >> b = {0} ", a >> b);
+        logger.log(Level.INFO, "a << b = {0} ", a << b);
+        logger.log(Level.INFO, "a >>> b = {0} ", a >>> b);
+
 
         // 5. Assignment Operators
-        System.out.println("\nAssignment Operators:");
+        logger.info("Assignment Operators:");
         int c = 10;
-        c += 5; System.out.println("c += 5: " + c);
-        c -= 3; System.out.println("c -= 3: " + c);
-        c *= 2; System.out.println("c *= 2: " + c);
-        c /= 4; System.out.println("c /= 4: " + c);
-        c %= 3; System.out.println("c %= 3: " + c);
+        c += 5;
+        logger.log(Level.INFO, "c += 5 --> c = {0}", c);
+        c -= 5;
+        logger.log(Level.INFO, "c -= 5 --> c = {0}", c);
+        c *= 2;
+        logger.log(Level.INFO, "c *= 2 --> c = {0}", c);
+        c /= 4;
+        logger.log(Level.INFO, "c /= 4 --> c = {0}", c);
+        c %= 3;
+        logger.log(Level.INFO, "c %= 3 --> c = {0}", c);
 
         // 6. Unary Operators
-        System.out.println("\nUnary Operators:");
+        logger.info("Unary Operators:");
         int d = 5;
-        System.out.println("d++: " + (d++));
-        System.out.println("++d: " + (++d));
-        System.out.println("d--: " + (d--));
-        System.out.println("--d: " + (--d));
-        System.out.println("-d: " + (-d));
-        System.out.println("+d: " + (+d));
+        logger.log(Level.INFO, "d++ = {0}", d++);
+        logger.log(Level.INFO, "d-- = {0}", d--);
+        logger.log(Level.INFO, "--d = {0}", --d);
+        logger.log(Level.INFO, "++d = {0}", ++d);
+        logger.log(Level.INFO, "-d = {0}", -d);
+        logger.log(Level.INFO, "+d = {0}", +d);
 
         // 7. Ternary Operator
-        System.out.println("\nTernary Operator:");
+        logger.info("Ternary Operators:");
         int e = (a > b) ? a : b;
-        System.out.println("Largest of a and b: " + e);
+        logger.log(Level.INFO, "Largest of {0} and {1} is {2} ", new Object[]{a, b, e});
     }
 }

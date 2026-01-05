@@ -1,6 +1,10 @@
 package com.techouts.cj2;
 
+import java.util.logging.Logger;
+
 public class IfElseDemo {
+    private static final Logger logger = Logger.getLogger(IfElseDemo.class.getName());
+
     public static void main(String[] args) {
         int a = 10;
         int b = 3;
@@ -10,39 +14,39 @@ public class IfElseDemo {
         boolean hasID = true;
 
         // 1. Basic if
-        if(a > 5)
-            System.out.println("a is greater than 5");
+        if (a > 5)
+            logger.info("A is greater than 5");
 
         // 2. if-else
-        if(b > 5)
-            System.out.println("b is greater than 5");
+        if (b > 5)
+            logger.info("B is greater than 5");
         else
-            System.out.println("b is 5 or less");
+            logger.info("b is 5 or less");
 
         // 3. if-else
-        if(marks >= 90)
-            System.out.println("Grade A");
-        else if(marks >= 75)
-            System.out.println("Grade B");
-        else if(marks >= 60)
-            System.out.println("Grade C");
+        if (marks >= 90)
+            logger.info("Grade A");
+        else if (marks >= 75)
+            logger.info("Grade B");
+        else if (marks >= 60)
+            logger.info("Grade C");
         else
-            System.out.println("Fail");
+            logger.info("Fail");
 
         // 4. Nested if-else
-        if(num > 0) {
-            if(num % 2 == 0)
-                System.out.println("Positive even number");
+        if (num > 0) {
+            if (num % 2 == 0)
+                logger.info("Positive even number");
             else
-                System.out.println("Positive odd number");
+                logger.info("Positive odd number");
         } else {
-            System.out.println("Non-positive number");
+            logger.info("Non-positive number");
         }
 
         // 5. if with logical operators
-        if(age >= 18 && hasID)
-            System.out.println("Allowed to enter");
+        if (age >= 18 && hasID)
+            logger.info("Allowed to enter");
         else
-            System.out.println("Not allowed to enter");
+            logger.info("Not allowed to enter");
     }
 }
