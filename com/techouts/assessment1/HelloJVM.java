@@ -1,8 +1,11 @@
 package com.techouts.assessment1;
 
+import java.util.logging.Logger;
+
 public class HelloJVM {
+    private static final Logger logger = Logger.getLogger(HelloJVM.class.getName());
     public static void main(String[] args) {
-        System.out.println("Hello JVM");
+        logger.info("Hello JVM");
         // 1. Compilation : convert Source code(.java) into Bytecode(.class),Bytecode is Machine Independent.
         // 2. ClassLoader : Loads the PrintingHelloJVM file to memory . It reads the bytecode and make it available for execution.
         // 3. Linking : Bytecode is verified for correctness.

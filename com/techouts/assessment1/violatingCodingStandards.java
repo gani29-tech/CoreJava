@@ -1,6 +1,6 @@
 package com.techouts.assessment1;
 
-public class violatingCodingStandards {               // class name should be PascalCase
+public class violatingCodingStandards { // class name should be PascalCase
     static void Printageheight(){                     // method name should be camelCase
     System.out.println("Hi");                         // System.out.println replaced with returnable formatted String
     }

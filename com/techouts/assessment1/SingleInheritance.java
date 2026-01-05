@@ -1,14 +1,23 @@
 package com.techouts.assessment1;
-class Car{
-    void startCar(){
-        System.out.println("Engine Started");
+
+import java.util.logging.Logger;
+
+class Car {
+    private static final Logger logger = Logger.getLogger(Car.class.getName());
+
+    void startCar() {
+        logger.info("Engine started");
     }
 }
-class Engine extends Car{
-    void startEngine(){
-        System.out.println("Engine is Starting");
+
+class Engine extends Car {
+    private static final Logger logger = Logger.getLogger(Engine.class.getName());
+
+    void startEngine() {
+        logger.info("Engine is starting");
     }
 }
+
 public class SingleInheritance {
     public static void main(String[] args) {
         Engine e = new Engine();

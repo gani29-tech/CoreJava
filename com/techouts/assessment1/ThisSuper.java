@@ -1,5 +1,10 @@
 package com.techouts.assessment1;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 class Computer{
+    private static final Logger logger = Logger.getLogger(Computer.class.getName());
     String computerName;
     String computerBrand;
     void setComputerDetails(String computerName, String computerBrand){
@@ -7,7 +12,7 @@ class Computer{
         this.computerBrand = computerBrand;
     }
     void displayComputerDetails(){
-        System.out.println("Computer Name: " + computerName+"\nComputer Brand: "+computerBrand);
+        logger.log(Level.INFO,"Computer Name is {0} , Computer Brand is {1} ",new Object[]{computerName,computerBrand});
     }
 }
 class Desktop extends Computer{

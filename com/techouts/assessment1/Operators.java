@@ -1,34 +1,38 @@
 package com.techouts.assessment1;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Operators {
+    private static final Logger logger = Logger.getLogger(Operators.class.getName());
+
     public static void main(String[] args) {
         int firstNumber = 1;
         int secondNumber = 2;
-        System.out.println("firstNumber = " + firstNumber);
-        System.out.println("secondNumber = " + secondNumber);
+        logger.log(Level.INFO, "{0}", firstNumber);
+        logger.log(Level.INFO, "{0}", secondNumber);
 
         // Arithematic Opertators
-        System.out.println("Addition : " +(firstNumber + secondNumber));
-        System.out.println("Subtraction : " +(firstNumber - secondNumber));
-        System.out.println("Multiplication : " +(firstNumber * secondNumber));
-        System.out.println("Division : " +(firstNumber / secondNumber));
-        System.out.println("Remainder : " +(firstNumber % secondNumber));
+        logger.log(Level.INFO, "Addition : {0}", firstNumber + secondNumber);
+        logger.log(Level.INFO, "Subtraction : {0}", firstNumber - secondNumber);
+        logger.log(Level.INFO, "Multiplication : {0}", firstNumber * secondNumber);
+        logger.log(Level.INFO, "Division : {0}", firstNumber / secondNumber);
+        logger.log(Level.INFO, "Modulus : {0}", firstNumber % secondNumber);
 
         // Relational Operators
-        System.out.println("firstNumber >= secondNumber : "+(firstNumber >= secondNumber));
-        System.out.println("firstNumber <= secondNumber : "+(firstNumber <= secondNumber));
-        System.out.println("firstNumber == secondNumber : "+(firstNumber == secondNumber));
-        System.out.println("firstNumber != secondNumber : "+(firstNumber != secondNumber));
-        System.out.println("firstNumber > secondNumber : "+(firstNumber > secondNumber));
-        System.out.println("firstNumber < secondNumber : "+(firstNumber < secondNumber));
+        logger.log(Level.INFO, "firstNumber >= secondNumber: {0}", firstNumber >= secondNumber);
+        logger.log(Level.INFO, "firstNumber <= secondNumber: {0}", firstNumber <= secondNumber);
+        logger.log(Level.INFO, "firstNumber > secondNumber: {0}", firstNumber > secondNumber);
+        logger.log(Level.INFO, "firstNumber < secondNumber: {0}", firstNumber < secondNumber);
+        logger.log(Level.INFO, "firstNumber != secondNumber: {0}", firstNumber != secondNumber);
 
         // Logical Operators
         boolean firstBoolean = true;
         boolean secondBoolean = false;
-        System.out.println("Logical AND : " +(firstBoolean && secondBoolean));
-        System.out.println("Logical OR : " +(firstBoolean || secondBoolean));
-        System.out.println("Logical NOR : " +!(firstBoolean || secondBoolean));
-
+        logger.log(Level.INFO, "Logical AND : {0}", firstBoolean && secondBoolean);
+        logger.log(Level.INFO, "Logical OR : {0}", firstBoolean || secondBoolean);
+        logger.log(Level.INFO, "Logical XOR : {0}", firstBoolean ^ secondBoolean);
+        logger.log(Level.INFO, "Logical NOR :  {0}", !(firstBoolean || secondBoolean));
 
     }
 }

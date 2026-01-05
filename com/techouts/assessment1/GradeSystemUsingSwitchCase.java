@@ -1,21 +1,23 @@
 package com.techouts.assessment1;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class GradeSystemUsingSwitchCase {
+    private static final Logger logger = Logger.getLogger(GradeSystemUsingSwitchCase.class.getName());
     public static void main(String[] args) {
         int marks;
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter Marks: ");
+        logger.info("Enter the marks");
         marks = input.nextInt();
         if (marks % 10==0)
             marks ++;
         switch (marks/10){
-            case 9,10 -> System.out.println("Grade: A");
-            case 8  -> System.out.println("Grade: B");
-            case 7 -> System.out.println("Grade: C");
-            case 6 -> System.out.println("Grade: D");
-            default -> System.out.println("Fail");
+            case 9,10 -> logger.info("Grade : A ");
+            case 8  -> logger.info("Grade : B ");
+            case 7 -> logger.info("Grade : C ");
+            case 6 -> logger.info("Grade : D ");
+            default -> logger.info("Fail");
 
         }
     }

@@ -1,16 +1,22 @@
 package com.techouts.assessment1;
-class Bottle{
-    private Bottle(){
-        fillBottle1();
-        fillBottle2();
+
+import java.util.logging.Logger;
+
+class Bottle {
+    private static final Logger logger = Logger.getLogger(Bottle.class.getName());
+
+    private Bottle() {
     }
-    static void fillBottle1(){
-        System.out.println("Filling bottle1");
+
+    static void fillBottle1() {
+        logger.info("Filling bottle1");
     }
-    static void fillBottle2(){
-        System.out.println("Filling bottle2");
+
+    static void fillBottle2() {
+        logger.info("Filling bottle2");
     }
 }
+
 public class StaticBinding {
     public static void main(String[] args) {
         Bottle.fillBottle1();

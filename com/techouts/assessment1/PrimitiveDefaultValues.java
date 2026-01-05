@@ -1,5 +1,8 @@
 package com.techouts.assessment1;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class PrimitiveDefaultValues {
     int intValue;
     double doubleValue;
@@ -9,16 +12,17 @@ public class PrimitiveDefaultValues {
     byte byteValue;
     char charValue;
     long longValue;
+    private static final Logger logger = Logger.getLogger(PrimitiveDefaultValues.class.getName());
 
     public static void main(String[] args) {
         PrimitiveDefaultValues pd = new PrimitiveDefaultValues();
-        System.out.println(pd.intValue);
-        System.out.println(pd.doubleValue);
-        System.out.println(pd.floatValue);
-        System.out.println(pd.booleanValue);
-        System.out.println(pd.shortValue);
-        System.out.println(pd.byteValue);
-        System.out.println(pd.charValue);
-        System.out.println(pd.longValue);
+        logger.log(Level.INFO, "Int Value: {0}", pd.intValue);
+        logger.log(Level.INFO, "Double Value: {0}", pd.doubleValue);
+        logger.log(Level.INFO, "Float Value: {0}", pd.floatValue);
+        logger.log(Level.INFO, "Boolean Value: {0}", pd.booleanValue);
+        logger.log(Level.INFO, "Short Value: {0}", pd.shortValue);
+        logger.log(Level.INFO, "Byte Value: {0}", pd.byteValue);
+        logger.log(Level.INFO, "Char Value: {0}", pd.charValue);
+        logger.log(Level.INFO, "Long Value: {0}", pd.longValue);
     }
 }

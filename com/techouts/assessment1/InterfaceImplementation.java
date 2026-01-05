@@ -1,16 +1,26 @@
 package com.techouts.assessment1;
-interface OS{
+
+import java.util.logging.Logger;
+
+interface OS {
+    Logger logger = Logger.getLogger(OS.class.getName());
+
     void reboot();
-    default void run(){
-        System.out.println("RUNNING");
+
+    default void run() {
+        logger.info("Running OS");
     }
 }
-class Android implements OS{
+
+class Android implements OS {
+    private static final Logger logger = Logger.getLogger(Android.class.getName());
+
     @Override
     public void reboot() {
-        System.out.println("REBOOTING");
+        logger.info("Rebooting OS");
     }
 }
+
 public class InterfaceImplementation {
     public static void main(String[] args) {
         OS os = new Android();
