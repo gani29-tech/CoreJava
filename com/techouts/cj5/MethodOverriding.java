@@ -1,18 +1,27 @@
 package com.techouts.cj5;
-class Bike{
-    void startEngine(){
-        System.out.println("Bike Engine Started");
+
+import java.util.logging.Logger;
+
+class Bike {
+    private static final Logger logger = Logger.getLogger(Bike.class.getName());
+
+    void startEngine() {
+        logger.info("Bike Engine Started");
     }
 }
-class Car extends Bike{
+
+class Car extends Bike {
+    private static final Logger logger = Logger.getLogger(Car.class.getName());
+
     @Override
-    void  startEngine(){
+    void startEngine() {
         super.startEngine();
-        System.out.println("Car Engine Started");
+        logger.info("Car Engine Started");
     }
 }
+
 public class MethodOverriding {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Car car = new Car();
         car.startEngine();
     }

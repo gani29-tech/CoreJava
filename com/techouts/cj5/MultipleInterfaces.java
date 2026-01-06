@@ -1,4 +1,7 @@
 package com.techouts.cj5;
+
+import java.util.logging.Logger;
+
 interface ECU{
     void runECU();
 }
@@ -9,17 +12,18 @@ interface Radiator{
     void runRadiator();
 }
 class MotorCycle implements ECU, Meter, Radiator{
+    private static final Logger logger =  Logger.getLogger(MotorCycle.class.getName());
     @Override
     public void runECU(){
-        System.out.println("ECU is running");
+        logger.info("ECU is running");
     }
     @Override
     public void runMeter(){
-        System.out.println("Meter is running");
+        logger.info("Meter is running");
     }
     @Override
     public void runRadiator(){
-        System.out.println("Radiator is running");
+        logger.info("Radiator is running");
     }
 }
 public class MultipleInterfaces {

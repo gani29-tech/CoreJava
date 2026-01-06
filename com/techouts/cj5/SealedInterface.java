@@ -1,22 +1,34 @@
 package com.techouts.cj5;
-sealed interface Fruit permits Apple,Grape{
+
+import java.util.logging.Logger;
+
+sealed interface Fruit permits Apple, Grape {
     void fruitName();
 }
-final class Apple implements Fruit{
-    public void fruitName(){
-        System.out.println("apple");
+
+final class Apple implements Fruit {
+    private static final Logger logger = Logger.getLogger(Apple.class.getName());
+
+    @Override
+    public void fruitName() {
+        logger.info("apple");
     }
 }
-final class Grape implements Fruit{
-    public void fruitName(){
-        System.out.println("grape");
+
+final class Grape implements Fruit {
+    private static final Logger logger = Logger.getLogger(Grape.class.getName());
+
+    @Override
+    public void fruitName() {
+        logger.info("grape");
     }
 }
+
 public class SealedInterface {
     public static void main(String[] args) {
-        Fruit apple =  new Apple();
+        Fruit apple = new Apple();
         apple.fruitName();
-        Fruit grape =  new Grape();
+        Fruit grape = new Grape();
         grape.fruitName();
     }
 }

@@ -1,41 +1,60 @@
 package com.techouts.cj5;
-interface Drawable{
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+interface Drawable {
+    Logger logger = Logger.getLogger(Drawable.class.getName());
+
     void draw();
-    static void show(){
-        System.out.println("show");
+
+    static void show() {
+        logger.info("show");
     }
-    static int getArea(int a, int b){
-        return a*b;
+
+    static int getArea(int a, int b) {
+        return a * b;
     }
-    private void shape(){
-        System.out.println("shape");
+
+    private void shape() {
+        logger.info("shape");
     }
-    default void display(){
+
+    default void display() {
         shape();
-        System.out.println("display");
+        logger.info("display");
     }
 }
-class Circle implements Drawable{
+
+class Circle implements Drawable {
+    private static final Logger logger = Logger.getLogger(Circle.class.getName());
+
     @Override
     public void draw() {
-        System.out.println("drawing circle");
+        logger.info("drawing circle");
     }
 }
-class Rectangle implements Drawable{
+
+class Rectangle implements Drawable {
+    private static final Logger logger = Logger.getLogger(Rectangle.class.getName());
+
     @Override
     public void draw() {
-        System.out.println("drawing rectangle");
+        logger.info("drawing rectangle");
     }
 }
+
 public class InterfaceEx {
+    private static final Logger logger = Logger.getLogger(InterfaceEx.class.getName());
+
     public static void main(String[] args) {
         Drawable circle;
-        circle= new Circle();
+        circle = new Circle();
         circle.draw();
         circle = new Rectangle();
         circle.draw();
         Drawable.show();
         circle.display();
-        System.out.println(Drawable.getArea(1,2));
+        logger.log(Level.INFO, "{0}", Drawable.getArea(1, 2));
     }
 }

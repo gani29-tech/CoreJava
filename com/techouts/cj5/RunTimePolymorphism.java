@@ -1,27 +1,39 @@
 package com.techouts.cj5;
-class Bank{
-    void RateOfInterest(){
-        System.out.println("Rate of Interest");
+
+import java.util.logging.Logger;
+
+class Bank {
+    private static final Logger logger = Logger.getLogger(Bank.class.getName());
+
+    void rateOfInterest() {
+        logger.info("Rate of Interest");
     }
 }
+
 class Axis extends Bank {
+    private static final Logger logger = Logger.getLogger(Axis.class.getName());
+
     @Override
-    public void RateOfInterest() {
-        System.out.println("Axis is getting rate of interest");
+    public void rateOfInterest() {
+        logger.info("Axis is getting rate of interest");
     }
 }
+
 class SBI extends Bank {
+    private static final Logger logger = Logger.getLogger(SBI.class.getName());
+
     @Override
-    public void RateOfInterest() {
-        System.out.println("SBI is getting rate of interest");
+    public void rateOfInterest() {
+        logger.info("SBI is getting rate of interest");
     }
 }
+
 public class RunTimePolymorphism {
     public static void main(String[] args) {
         Bank b;
         b = new Axis();
-        b.RateOfInterest();
+        b.rateOfInterest();
         b = new SBI();
-        b.RateOfInterest();
+        b.rateOfInterest();
     }
 }

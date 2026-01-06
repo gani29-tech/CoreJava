@@ -1,43 +1,63 @@
 package com.techouts.cj5;
-abstract class Engine{
-    int a=90;
-    Engine(){
-        System.out.println("Engine");
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+abstract class Engine {
+    private static final Logger logger = Logger.getLogger(Engine.class.getName());
+    int a = 90;
+
+    Engine() {
+        logger.info("Engine");
     }
-    private void change(){
-        System.out.println("change");
+
+    private void change() {
+        logger.info("change");
     }
-    public void stop(){
+
+    public void stop() {
         change();
-        System.out.println("stop");
+        logger.info("stop");
     }
-    final void  start(){
-        System.out.println("start");
+
+    final void start() {
+        logger.info("start");
     }
-    static void check(){
-        System.out.println("check");
+
+    static void check() {
+        logger.info("check");
     }
+
     abstract void run();
 }
-class Bus extends Engine{
+
+class Bus extends Engine {
+    private static final Logger logger = Logger.getLogger(Bus.class.getName());
+
     @Override
-    void run(){
-        System.out.println("Bus is running");
+    void run() {
+        logger.info("Bus is running");
     }
 }
-class Train extends Bus{
+
+class Train extends Bus {
+    private static final Logger logger = Logger.getLogger(Train.class.getName());
+
     @Override
-    void run(){
-        System.out.println("Train is running");
+    void run() {
+        logger.info("Train is running");
     }
 }
+
 public class AbstractClass {
+    private static final Logger logger = Logger.getLogger(AbstractClass.class.getName());
+
     public static void main(String[] args) {
         Engine e2 = new Train();
         e2.start();
         e2.run();
         e2.stop();
         Engine.check();
-        System.out.println(e2.a);
+        logger.log(Level.INFO, "{0}", e2.a);
     }
 }
