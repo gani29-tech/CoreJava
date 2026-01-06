@@ -1,8 +1,12 @@
 package com.techouts.cj4;
 
-final class Monkey extends Animal{
+import java.util.logging.Logger;
+
+final class Monkey extends Animal {
+    private static final Logger logger = Logger.getLogger(Monkey.class.getName());
+
     @Override
-    void show(){
-        System.out.println("Monkey");
+    void show() {
+        logger.info("Monkey");
     }
 }

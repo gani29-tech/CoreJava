@@ -1,78 +1,97 @@
 package com.techouts.cj4;
-class RefInstance{
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class RefInstance {
     int id;
-    void setId(){
-        this.id=1;
+
+    void setId() {
+        this.id = 1;
     }
 }
 
-class ConstructorDemo{
+class ConstructorDemo {
+    private static final Logger logger = Logger.getLogger(ConstructorDemo.class.getName());
     int value;
-    public ConstructorDemo(){
-        System.out.println("Default constructor called");
+
+    public ConstructorDemo() {
+        logger.info("Default Constructor called");
     }
-    public ConstructorDemo(int value){
+
+    public ConstructorDemo(int value) {
         this();
-        this.value=value;
+        this.value = value;
     }
 }
 
-class MethodInvoker{
-    void display(){
-        System.out.println("Display method executed");
+class MethodInvoker {
+    private static final Logger logger = Logger.getLogger(MethodInvoker.class.getName());
+
+    void display() {
+        logger.info("Display method executed");
     }
-    void show(){
-        System.out.println("Show method executed");
+
+    void show() {
+        logger.info("Show method executed");
     }
 }
 
-class ReturnThis{
-    ReturnThis getInstance(){
+class ReturnThis {
+    private static final Logger logger = Logger.getLogger(ReturnThis.class.getName());
+
+    ReturnThis getInstance() {
         return this;
     }
-    ReturnThis showData(){
-        return this;
-    }
-    void display(){
-        System.out.println("Display method executed");
+
+    void display() {
+        logger.info("Display method executed");
     }
 }
 
-class PassThisToConstructor{
+class PassThisToConstructor {
+    private static final Logger logger = Logger.getLogger(PassThisToConstructor.class.getName());
     CurrentObject obj;
-    PassThisToConstructor(CurrentObject obj){
-        this.obj=obj;
+
+    PassThisToConstructor(CurrentObject obj) {
+        this.obj = obj;
     }
-    void showMessage(){
-        System.out.println("Message from PassThisToConstructor");
+
+    void showMessage() {
+        logger.info("Message from PassThisToConstructor");
     }
 }
 
-class CurrentObject{
-    public CurrentObject(){
-        PassThisToConstructor passObj=new PassThisToConstructor(this);
+class CurrentObject {
+    public CurrentObject() {
+        PassThisToConstructor passObj = new PassThisToConstructor(this);
         passObj.showMessage();
     }
 }
 
-class PassThisToMethod{
-    void showMessage(PassThisToMethod passObj){
-        System.out.println("Message from method argument");
+class PassThisToMethod {
+    private static final Logger logger = Logger.getLogger(PassThisToMethod.class.getName());
+
+    void showMessage(PassThisToMethod passObj) {
+        logger.log(Level.INFO, "Message from PassThisToMethod {0}", passObj);
     }
-    void callMethod(){
+
+    void callMethod() {
         showMessage(this);
     }
 }
 
-public class ThisDemo{
-    public static void main(String[] args){
-        RefInstance refObj=new RefInstance();
+public class ThisDemo {
+    public static void main(String[] args) {
+        new ConstructorDemo(4);
+        RefInstance refObj = new RefInstance();
         refObj.setId();
-        MethodInvoker methodObj=new MethodInvoker();
+        MethodInvoker methodObj = new MethodInvoker();
         methodObj.display();
+        methodObj.show();
         new ReturnThis().getInstance().display();
-        PassThisToMethod showMessge =new PassThisToMethod();
-        showMessge.callMethod();
+        PassThisToMethod showMessage = new PassThisToMethod();
+        showMessage.callMethod();
 
     }
 }

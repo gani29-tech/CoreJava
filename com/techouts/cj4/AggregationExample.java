@@ -1,25 +1,30 @@
 package com.techouts.cj4;
 
-class Bike{
+import java.util.logging.Logger;
+
+class Bike {
+    private static final Logger logger = Logger.getLogger(Bike.class.getName());
     Engine engine;
 
     public Bike(Engine engine) {
-        this.engine=engine;
+        this.engine = engine;
     }
 
-    void startBike(){
+    void startBike() {
         engine.startEngine();
-        System.out.println("Bike is running");
+        logger.info("Bike is running");
     }
-    void stopBike(){
+
+    void stopBike() {
         engine.stopEngine();
-        System.out.println("Bike is stopped");
+        logger.info("Bike is stopped");
     }
 }
+
 public class AggregationExample {
     public static void main(String[] args) {
-        Engine engine=new Engine();
-        Bike bike=new Bike(engine);
+        Engine engine = new Engine();
+        Bike bike = new Bike(engine);
         bike.startBike();
         bike.stopBike();
     }

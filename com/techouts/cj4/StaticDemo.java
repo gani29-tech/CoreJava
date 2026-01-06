@@ -1,22 +1,27 @@
 package com.techouts.cj4;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class StaticDemo {
+    private static final Logger logger = Logger.getLogger(StaticDemo.class.getName());
     static class InnerClass{
         void show(){
-            System.out.println("Nested static class");
+            logger.info("Nested static class");
         }
     }
     protected static void method1(){
-        System.out.println("Inside protectd Static method");
+        logger.info("Inside protected static method");
     }
     static String companyName;
     public static void main(String[] args){
         StaticDemo.InnerClass innerClass = new StaticDemo.InnerClass();
         innerClass.show();
-        System.out.println(companyName);
+        logger.log(Level.INFO, "{0}", companyName);
         method1();
     }
     static{
         companyName = "Tech-outs";
-        System.out.println("Inside Static block");
+        logger.info("Inside static block");
     }
 }

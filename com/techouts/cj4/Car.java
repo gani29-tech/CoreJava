@@ -1,17 +1,22 @@
 package com.techouts.cj4;
 
-class Car{
-    public void useECU(ECU ecu){
+import java.util.logging.Logger;
+
+class Car {
+    private static final Logger logger = Logger.getLogger(Car.class.getName());
+
+    public void useECU(ECU ecu) {
         ecu.runECU();
-        System.out.println("ECU is started");
+        logger.info("ECU is started");
         ecu.stopECU();
-        System.out.println("ECU is stopped");
+        logger.info("ECU is stopped");
     }
-    public void useEngine(Engine engine){
+
+    public void useEngine(Engine engine) {
         engine.startEngine();
-        System.out.println("Engine is Started");
+        logger.info("Engine is started");
         engine.stopEngine();
-        System.out.println("Engine is Stopped");
+        logger.info("Engine is stopped");
     }
 
 }

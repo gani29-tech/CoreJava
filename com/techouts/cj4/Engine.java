@@ -1,10 +1,13 @@
 package com.techouts.cj4;
 
+import java.util.logging.Logger;
+
 class Engine{
+    private static final Logger logger = Logger.getLogger(Engine.class.getName());
     void startEngine(){
-        System.out.println("Engine is starting");
+        logger.info("Engine is starting");
     }
     void  stopEngine(){
-        System.out.println("Engine is Stopping");
+        logger.info("Engine is stopping");
     }
 }
