@@ -31,7 +31,7 @@ public class ThreadPool {
         Runnable r3 = new PerformTask("performTask3");
         Runnable r4 = new PerformTask("performTask4");
 
-        try(ExecutorService threadpool = Executors.newFixedThreadPool(5)){
+        try(ExecutorService threadpool = Executors.newFixedThreadPool(3)){
             threadpool.execute(r1);
             threadpool.execute(r2);
             threadpool.execute(r3);
