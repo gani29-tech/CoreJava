@@ -36,7 +36,7 @@ public class ThreadPool {
             threadpool.execute(r2);
             threadpool.execute(r3);
             threadpool.execute(r4);
+            threadpool.shutdown();
         }
-
     }
 }
