@@ -1,7 +1,7 @@
 package com.techouts.multithreading;
 
 class Example1  {
-   synchronized void t1(int n){
+    void t1(int n){
         for(int i=1;i<=n;i++){
             System.out.println(i*n);
             try{
