@@ -8,7 +8,8 @@ public class StartThreadDemo {
         t1.start();
         t2.start();
         for (int i = 1; i < 4; i++) {
-            System.out.println("hii");
+            Thread.yield();
+            System.out.println(Thread.currentThread().getName());
         }
     }
 }
@@ -17,7 +18,8 @@ class SampleThread extends Thread {
     @Override
     public void run() {
         for (int i = 1; i < 4; i++) {
-            System.out.println("hello " + Thread.currentThread().getName());
+            Thread.yield();
+            System.out.println("hello " +i +" "+ Thread.currentThread().getName());
         }
     }
 
