@@ -4,23 +4,46 @@ import java.util.logging.Logger;
 
 public class HelloJVM {
     private static final Logger logger = Logger.getLogger(HelloJVM.class.getName());
+
     public static void main(String[] args) {
         logger.info("Hello JVM");
-        // 1. Compilation : convert Source code(.java) into Bytecode(.class),Bytecode is Machine Independent.
-        // 2. ClassLoader : Loads the PrintingHelloJVM file to memory . It reads the bytecode and make it available for execution.
-        // 3. Linking : Bytecode is verified for correctness.
-        // 4. Initialization : Static variables/methods like main() are initialized.
-        // 5. Execution : Bytecode is executed using Execution Engine.
-        //     JIT (Just In Time) compiler may execute hot code into native machine for speed.
-        //     main() Method starts Execution.
-        // 6. Runtime Data Areas :
-        //     Heap -> Stores objects
-        //     Stack -> stores local variables , method calls
-        //     Method Area -> stores class information
-        // 7. JNI : Native Method Interface
-        //     If the program needs to interact with native (non-Java) libraries
-        //     (like operating system's I/O operations for 'System.out.println'),
-        //     the JNI provides the bridge.
-        // 8. Termination : main() finishes executing , JVM shuts down and free up all allocated resources.
+        // 1. Compilation:
+        //    Source code (.java) is compiled into bytecode (.class).
+        //    Bytecode is platform independent.
+
+        // 2. Class Loader Subsystem:
+        //    Loads the .class file into JVM memory.
+        //    It performs:
+        //      a) Loading
+        //      b) Linking
+        //         - Verification (bytecode correctness)
+        //         - Preparation (memory allocation for static variables)
+        //         - Resolution (symbolic references resolved)
+        //      c) Initialization (static blocks and static variables)
+
+        // 3. Initialization:
+        //    Static variables and static blocks are executed.
+        //    After initialization, JVM invokes the main() method.
+
+        // 4. Execution:
+        //    Bytecode is executed by the Execution Engine.
+        //    - Interpreter executes bytecode line by line.
+        //    - JIT compiler converts frequently used bytecode into native machine code
+        //      for better performance.
+
+        // 5. Runtime Data Areas (Memory Areas):
+        //    - Heap: Stores objects and instance variables.
+        //    - Stack: Stores method calls and local variables (thread-specific).
+        //    - Method Area: Stores class metadata, static variables, and method bytecode.
+        //    - PC Register: Holds current instruction address.
+        //    - Native Method Stack: Used for native method execution.
+
+        // 6. JNI (Java Native Interface):
+        //    Provides a bridge between Java code and native (C/C++) libraries
+        //    when native methods are used.
+
+        // 7. Termination:
+        //    When main() finishes execution and no non-daemon threads are running,
+        //    JVM terminates and releases all allocated resources
     }
 }
