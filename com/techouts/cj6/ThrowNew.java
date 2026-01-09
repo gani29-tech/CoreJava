@@ -1,5 +1,6 @@
 package com.techouts.cj6;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +16,7 @@ public class ThrowNew {
                 throw new ArithmeticException("Age must be greater than 18");
             }
         } catch (ArithmeticException e) {
-            logger.log(Level.WARNING, e.getMessage());
+            logger.log(Level.WARNING, Arrays.toString(e.getStackTrace()));
             logger.log(Level.WARNING, e.toString());
 
         }
