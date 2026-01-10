@@ -1,2 +1,2 @@
-Hi I am GaneshFrom Warangal
-Hi I am from Buffer
+Hello I am writing from BufferWriterEx
+How are you?
