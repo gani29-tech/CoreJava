@@ -15,7 +15,7 @@ public class ByteArrayInputStreamEx {
         try (ByteArrayInputStream bais = new ByteArrayInputStream(buffer)) {
             int a;
             while ((a = bais.read()) != -1) {
-                System.out.println(a);
+                System.out.print((char)a);
             }
         }
     }
