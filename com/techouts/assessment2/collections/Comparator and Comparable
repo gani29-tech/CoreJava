@@ -1,0 +1,14 @@
+package com.techouts.assessment2.collections;
+
+Comparable : It is an interface
+    1. It is used to sort the objects by required fields
+    2. Using compareTo method we sort the fields
+    3. Single sorting Technique / order
+    4. Collections.sort(list)
+
+Comparator : It is an interface
+    1. It is also used to sort/order the objects by required fields
+    2. Using compare method we sort the fields
+    3. Multiple sorting Techniques/orders
+    4. Collections.sort(list,new Comparator());
+       list.sort(Comparator);
