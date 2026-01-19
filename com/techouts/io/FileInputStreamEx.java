@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class FileInputStreamEx {
-    static String filename = "src\\com\\techouts\\io\\File.txt";
+    public static String filename = "src\\com\\techouts\\io\\File.txt";
 
     public static void main(String[] args) throws IOException {
         try (FileInputStream fis = new FileInputStream(filename);) {

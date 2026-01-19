@@ -2,3 +2,5 @@ File : It is a collection of data , like audio,video,text and etc.
 path : It is file storage location where it represent by slashes and directory names.
        Ex: C:/Downloads/image.jpg
 Files : It is a group of files , like a folder has a files.
+        or
+        Work with path object ,can read,write,delete and check Existence.(Modern Utility file operations)

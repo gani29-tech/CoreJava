@@ -1,2 +1,1 @@
-Hello I am writing from BufferWriterEx
-How are you?
+Hello Everyone

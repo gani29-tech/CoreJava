@@ -5,14 +5,28 @@ class RunDeadlock implements Runnable{
     private final Object value = new Object();
     @Override
     public void run() {
-        synchronized (name){
+        if(Thread.currentThread().getName().equals("Thread-0")){
             synchronized (value){
-                System.out.println(Thread.currentThread().getName()+" is running");
+                try{
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                synchronized (name){
+                    System.out.println(Thread.currentThread().getName()+" is running");
+                }
             }
         }
-        synchronized (value){
+        else{
             synchronized (name){
-                System.out.println(Thread.currentThread().getName()+" is running");
+                try{
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                synchronized (value){
+                    System.out.println(Thread.currentThread().getName()+" is running");
+                }
             }
         }
     }
